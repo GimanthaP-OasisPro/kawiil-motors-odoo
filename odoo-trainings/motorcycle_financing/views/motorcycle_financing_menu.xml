@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Dashboard App Menu (shows as a big app icon) -->
+    <menuitem id="menu_motorcycle_financing_root"
+              name="Financing"
+              sequence="10"/>
+
+    <!-- App Top Menu -->
+    <menuitem id="menu_motorcycle_financing"
+              name="Motorcycle Financing"
+              parent="menu_motorcycle_financing_root"
+              sequence="10"/>
+
+    <!-- Sub Menu linked to action -->
+    <menuitem id="menu_loan_applications"
+              name="Loan Applications"
+              parent="menu_motorcycle_financing"
+              action="motorcycle_financing.action_loan_application"
+              sequence="10"/>
+
+</odoo>
