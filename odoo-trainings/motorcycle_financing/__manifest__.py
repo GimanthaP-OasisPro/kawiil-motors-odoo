@@ -14,4 +14,8 @@
     'security/security.xml',
     'security/ir.model.access.csv',
 ],
+    'demo': [
+    'data/loan_demo.xml',
+],
+
 }
