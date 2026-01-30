@@ -15,17 +15,18 @@
 
     <!-- Financing User -->
     <record id="group_financing_user" model="res.groups">
-      <field name="name">Motorcycle Financing User</field>
-      <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
-      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-    </record>
+    <field name="name">Motorcycle Financing User</field>
+    <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+</record>
+
 
     <!-- Financing Admin -->
     <record id="group_financing_admin" model="res.groups">
-      <field name="name">Motorcycle Financing Admin</field>
-      <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
-      <field name="implied_ids" eval="[(4, ref('motorcycle_financing.group_financing_user'))]"/>
-    </record>
+    <field name="name">Motorcycle Financing Admin</field>
+    <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
+    <field name="implied_ids" eval="[(4, ref('motorcycle_financing.group_financing_user'))]"/>
+</record>
 
   </data>
 </odoo>
