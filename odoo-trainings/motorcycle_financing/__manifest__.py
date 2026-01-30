@@ -11,9 +11,10 @@
     "installable": True,
     "depends": ["base"],
     'data': [
-    'security/security.xml',
+    'security/motorcycle_financing_groups.xml',
     'security/ir.model.access.csv',
-        
+    'security/rules.xml',
+
     'views/loan_application_views.xml',
     'views/motorcycle_financing_menu.xml',
 ],

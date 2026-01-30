@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- USER: can read/create/write ONLY when not signed; cannot delete signed either -->
+        <record id="rule_loan_application_user_no_edit_signed" model="ir.rule">
+            <field name="name">Loan: User cannot edit/delete signed</field>
+            <field name="model_id" ref="model_loan_application"/>
+            <field name="domain_force">[('state','not in',['signed'])]</field>
+            <field name="groups" eval="[(4, ref('motorcycle_financing.group_financing_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <!-- ADMIN: unrestricted access -->
+        <record id="rule_loan_application_admin_all" model="ir.rule">
+            <field name="name">Loan: Admin full access</field>
+            <field name="model_id" ref="model_loan_application"/>
+            <field name="domain_force">[(1,'=',1)]</field>
+            <field name="groups" eval="[(4, ref('motorcycle_financing.group_financing_admin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+    </data>
+</odoo>
