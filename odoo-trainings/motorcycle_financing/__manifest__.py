@@ -10,5 +10,8 @@
     "application": True,
     "installable": True,
     "depends": ["base"],
-    "data": ['security/ir.model.access.csv'],
+    'data': [
+    'security/security.xml',
+    'security/ir.model.access.csv',
+],
 }

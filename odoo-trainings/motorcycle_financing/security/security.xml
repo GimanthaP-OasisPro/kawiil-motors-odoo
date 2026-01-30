@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Financing User Role -->
+    <record id="group_financing_user" model="res.groups">
+        <field name="name">Financing User</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>
