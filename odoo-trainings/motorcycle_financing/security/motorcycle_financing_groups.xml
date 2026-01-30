@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
+  <data>
 
-        <!-- Category (shows in Users > Groups organization) -->
-        <record id="model_category_dealership" model="ir.model.category">
-            <field name="name">Motorcycle Dealership</field>
-        </record>
+    <!-- Category (correct model name) -->
+    <record id="model_category_dealership" model="ir.module.category">
+      <field name="name">Motorcycle Dealership</field>
+    </record>
 
-        <!-- Privilege (Odoo 19) -->
-        <record id="res_groups_privilege_financing" model="res.groups.privilege">
-            <field name="name">Motorcycle Financing</field>
-            <field name="category_id" ref="motorcycle_financing.model_category_dealership"/>
-        </record>
+    <!-- Privilege -->
+    <record id="res_groups_privilege_financing" model="res.groups.privilege">
+      <field name="name">Motorcycle Financing</field>
+      <field name="category_id" ref="motorcycle_financing.model_category_dealership"/>
+    </record>
 
-        <!-- Financing User -->
-        <record id="group_financing_user" model="res.groups">
-            <field name="name">Motorcycle Financing User</field>
-            <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
-            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
-        </record>
+    <!-- Financing User -->
+    <record id="group_financing_user" model="res.groups">
+      <field name="name">Motorcycle Financing User</field>
+      <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
+      <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
 
-        <!-- Financing Admin -->
-        <record id="group_financing_admin" model="res.groups">
-            <field name="name">Motorcycle Financing Admin</field>
-            <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
-            <field name="implied_ids" eval="[(4, ref('motorcycle_financing.group_financing_user'))]"/>
-        </record>
+    <!-- Financing Admin -->
+    <record id="group_financing_admin" model="res.groups">
+      <field name="name">Motorcycle Financing Admin</field>
+      <field name="privilege_id" ref="motorcycle_financing.res_groups_privilege_financing"/>
+      <field name="implied_ids" eval="[(4, ref('motorcycle_financing.group_financing_user'))]"/>
+    </record>
 
-    </data>
+  </data>
 </odoo>
